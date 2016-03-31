@@ -4,6 +4,12 @@ var ImageListEntryView = Backbone.View.extend({
 
   template: _.template('<td><%= title %></td>'),
 
+  events: {
+    'click': function(){
+      this.model.select();
+    }
+  },
+
   initialize: function() {
     this.render();
   },
