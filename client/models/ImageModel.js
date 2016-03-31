@@ -1,5 +1,9 @@
 var ImageModel = Backbone.Model.extend({
   
-  initialize:  function() {}
+  initialize:  function() {},
+
+  select: function() {
+    this.trigger('select', this);
+  }
 
 });
