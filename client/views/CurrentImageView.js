@@ -1,19 +1,31 @@
 var CurrentImageView = Backbone.View.extend({
 
-  template: _.template('<img src=<%= url %> /><div><%= title %></div><div><%= rating %> out of 5</div>'),
+  template: _.template('<img class="image" src=<%= url %> /><div><%= title %></div><div><%= rating %> out of 5</div>'),
 
   dropdown: function(num){
-    var $menu = $('<select>');
+    var $menu = $('<select class="rating">');
     var $option = $('<option>');
     for (var i = 0; i <= num; i++) {
       $menu.append($('<option>').text(i));
     }
-    console.log($menu);
     return $menu;
   },
 
   initialize: function() {
 
+  },
+
+  setRating: function(rating) {
+
+  }, 
+
+  events: {
+    'change': function() {
+      var newRating = $('.rating :selected').text()
+      this.model.set({'rating': newRating});
+      this.render();
+      $('.rating').val(newRating);
+    }
   },
 
   setImage: function(image) {

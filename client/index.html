@@ -16,9 +16,11 @@
     <script src="views/ImageListView.js"></script>
     <script src="views/ImageListEntryView.js"></script>
     <script src="views/AppView.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <!-- initiate app -->
     <script>
       $(function() {
+        window.localStorage.imageData = imageData;
         // instantiating imageList collection
         var imageList = new ImageList(imageData);
         // instantiating app model with imageList

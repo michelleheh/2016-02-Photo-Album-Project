@@ -2,7 +2,7 @@ var ImageListEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td><%= title %></td>'),
+  template: _.template('<tds><%= title %></td>'),
 
   events: {
     'click': function(){

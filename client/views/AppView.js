@@ -6,12 +6,14 @@ var AppView = Backbone.View.extend({
     this.model.on('change:currentImage', function(image) {
       this.currentImageView.setImage(image.get('currentImage'));
     }, this);
+    // add a rating view
   },
 
   render: function() {
     return this.$el.html([
       this.imageListView.$el,
       this.currentImageView.$el
+      // render rating view
     ]);
   }
 
