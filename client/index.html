@@ -12,6 +12,7 @@
     <script src="models/AppModel.js"></script>
     <script src="collections/ImageList.js"></script>
     <!-- views -->
+    <script src="views/InputView.js"></script>
     <script src="views/CurrentImageView.js"></script>
     <script src="views/ImageListView.js"></script>
     <script src="views/ImageListEntryView.js"></script>
@@ -20,7 +21,6 @@
     <!-- initiate app -->
     <script>
       $(function() {
-        window.localStorage.imageData = imageData;
         // instantiating imageList collection
         var imageList = new ImageList(imageData);
         // instantiating app model with imageList
