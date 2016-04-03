@@ -1,18 +1,15 @@
 class CurrentImage extends React.Component {
+
   constructor(props) {
     super(props);
-    this.state = {
-      CurrentImage: imageData[0]
-    };
   }
 
   render() {
     return (
       <div>
-        <div>
-          {this.state.CurrentImage.title}
-        </div>
-        <img className="image" src={this.state.CurrentImage.url} />
+        <img className="image" src={this.props.currentImage.url} />
+        <div>{this.props.currentImage.title}</div>
+        <div>{this.props.currentImage.rating} Out of 5</div>
       </div>
     )
   }

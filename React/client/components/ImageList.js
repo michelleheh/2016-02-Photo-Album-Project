@@ -1,11 +1,20 @@
 class ImageList extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageList: this.props.data
+    };
+  }
+
   render() {
-    var list = this.props.data.map(function(image) {
-      return (
-        <div>{image.title}</div>
-      );
-    });    
-    return ( <div>{list}</div> );
+    return (
+      <div className="image-list">
+        {this.props.imageList.map(image =>
+          <ImageListEntry currentImage={this.props.handleClick} imageData={image} />
+        )}
+      </div>
+    );
   }
 };
 
