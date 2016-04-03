@@ -11,7 +11,7 @@ class ImageList extends React.Component {
     return (
       <div className="image-list">
         {this.props.imageList.map(image =>
-          <ImageListEntry currentImage={this.props.handleClick} imageData={image} />
+          <ImageListEntry handleClick={this.props.handleClick} imageData={image} />
         )}
       </div>
     );

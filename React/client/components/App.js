@@ -10,9 +10,8 @@ class App extends React.Component {
     };
   }
 
-  selectImage(image){
-    this.setState({currentImage: image}).bind(this);
-    console.log('fired');
+  selectImage(image) {
+    this.setState({currentImage: image});
   }
 
   render() {
