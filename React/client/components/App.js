@@ -15,15 +15,24 @@ class App extends React.Component {
   }
 
   handleRatingFunc(rating) {
-    console.log(this.state.currentImage.rating);
     this.state.currentImage.rating = rating;
-    console.log(this.state.currentImage.rating);
-    this.setState(this.state.currentImage);
+    ReactDOM.render(<App />, document.getElementById('app'));
+  }
+
+  addImage(title, url) {
+    var image ={
+      title: title,
+      url: url,
+      rating: 0
+    };
+    imageData.unshift(image);
+    this.setState({imageList: imageData, currentImage: image});
   }
 
   render() {
     return (
       <div>
+        <AddImageForm handleAddImageFunc={this.addImage.bind(this)} />
         <ImageList imageList={this.state.imageList} handleClick={this.selectImage.bind(this)} />
         <CurrentImage currentImage={this.state.currentImage} />
         <Rating handleRatingFunc={this.handleRatingFunc.bind(this)} rating={this.state.currentImage.rating} />
@@ -32,4 +41,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />,document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
