@@ -19,6 +19,7 @@ var AppView = Backbone.View.extend({
         rating: 0
       };
       this.imageListView.collection.add(new ImageModel(image));
+      this.model.set({currentImage: new ImageModel(image)});
       this.imageListView.render();
     }
   },
