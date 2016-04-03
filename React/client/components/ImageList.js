@@ -10,8 +10,8 @@ class ImageList extends React.Component {
   render() {
     return (
       <div className="image-list">
-        {this.props.imageList.map(image =>
-          <ImageListEntry handleClick={this.props.handleClick} imageData={image} />
+        {this.props.imageList.map((image, index) =>
+          <ImageListEntry key={index} handleClick={this.props.handleClick} imageData={image} />
         )}
       </div>
     );
